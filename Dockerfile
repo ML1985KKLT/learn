@@ -1,7 +1,7 @@
 FROM centos:6
 MAINTAINER Malei
 RUN yum install passwd openssl openssh-server -y
-ADD webmin-1.710-1.noarch.rpm /root/
+ADD http://prdownloads.sourceforge.net/webadmin/webmin-1.740-1.noarch.rpm /root/
 RUN yum localinstall /root/webmin-1.710-1.noarch.rpm
 RUN echo '123123' | passwd --stdin root
 RUN ssh-keygen -q -t rsa -b 2048 -f /etc/ssh/ssh_host_rsa_key -N ''
